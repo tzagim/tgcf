@@ -28,7 +28,7 @@ streamlit = "^1.15.2"
 PyYAML = "^6.0"
 pymongo = "^4.3.3"
 gspread-asyncio = "^1.9.0"
-aiofiles = "^23.2.1"
+aiofiles = ">=23.2.1,<25.0.0"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^24.4.2", allow-prereleases = true}
