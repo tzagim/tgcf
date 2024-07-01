@@ -2575,13 +2575,12 @@ snowflake = ["snowflake-connector-python (>=2.8.0)", "snowflake-snowpark-python 
 
 [[package]]
 name = "telethon"
-version = "1.26.0"
+version = "1.36.0"
 description = "Full-featured Telegram client library for Python 3"
 optional = false
 python-versions = ">=3.5"
 files = [
-    {file = "Telethon-1.26.0-py3-none-any.whl", hash = "sha256:148ac8c27908853d5d8a116d55ce947e9ba167bb697c75226ae95645b2e5a504"},
-    {file = "Telethon-1.26.0.tar.gz", hash = "sha256:de7a1619110a2c06390fb5340839c6503c6b108b5f1a2f3bbe1ef60f02cecacb"},
+    {file = "Telethon-1.36.0.tar.gz", hash = "sha256:11db5c7ed7e37f1272d443fb7eea0f1db580d56c6949165233946fb323aaf3a7"},
 ]
 
 [package.dependencies]
@@ -2961,4 +2960,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "4cb6644fc74c547caa8315a17936ddc282a2742446455e34700e7852108871e9"
+content-hash = "919925fce84fb7fc5b96c1043a2afa3b964bfcce3d5937f7ba6a139efbe457a4"
