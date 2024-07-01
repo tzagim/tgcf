@@ -32,7 +32,7 @@ aiofiles = "^23.2.1"
 
 [tool.poetry.dev-dependencies]
 black = {version = "^24.4.2", allow-prereleases = true}
-isort = "^5.10.1"
+isort = "^5.13.2"
 pre-commit = "^3.7.1"
 
 
