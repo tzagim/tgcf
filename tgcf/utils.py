@@ -11,6 +11,7 @@ from typing import TYPE_CHECKING
 from telethon.client import TelegramClient
 from telethon.hints import EntityLike
 from telethon.tl.custom.message import Message
+from telethon.tl.functions.channels import GetFullChannelRequest, GetForumTopicsRequest
 
 from tgcf import __version__
 from tgcf.config import CONFIG
@@ -28,6 +29,30 @@ def platform_info():
     \nPlatform {platform.system()} {platform.release()}\
     \n{platform.architecture()} {platform.processor()}"""
 
+async def checkIfForum(
+    channelid: int
+    ) -> bool:
+    channelEntity = await client.get_entity(channelid)
+    # return should always be a bool
+    return channelEntity.forum
+
+async def getTopicIDs(
+    channelid: int
+    ) -> List[int]:
+    topicIDs = []
+    forumsList = await client(GetForumTopicsRequest(
+        channelid,
+        offset_date=datetime(1970, 1, 1),
+        offset_id=0,
+        offset_topic=0,
+        limit=-1,
+        q=' ')
+    )
+    #print(forumsList.stringify())
+    for topic in forumsList.topics:
+        topicIDs.append(topic.id)
+    
+    return topicIDs
 
 async def send_message(
     agent_id: int, recipient: EntityLike, tm: "TgcfMessage"
