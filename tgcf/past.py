@@ -45,6 +45,7 @@ async def forward_job(agent_id: int) -> None:
             src, destV = from_to
             dest = destV["dest"]
             pcfg_id = destV["pcfg"]
+            topicIDs = destV["topicIDs"]
             last_id = 0
             forward: config.Forward
             logging.info(f"Forwarding messages from {src} to {dest}")
@@ -74,7 +75,15 @@ async def forward_job(agent_id: int) -> None:
                     for d in dest:
                         if message.is_reply and r_event_uid in st.stored:
                             tm.reply_to = st.stored.get(r_event_uid).get(d)
-                        fwded_msg = await send_message(agent_id, d, tm)
+                        logging.info(f"first tm.reply_to - {tm.reply_to}")
+
+                        if (await checkIfForum(d)) and topicIDs[dest.index(d)]:
+                            availableTopicIDs = getTopicIDs(d)
+                            if topicIDs[dest.index(d)] in availableTopicIDs:
+                                tm.reply_to = topicIDs[dest.index(d)]
+                        logging.info(f"second tm.reply_to - {tm.reply_to}")
+
+                        fwded_msg = await send_message(agent_id, d, tm, topicID)
                         st.stored[event_uid].update({d: fwded_msg.id})
                     tm.clear()
                     last_id = message.id
