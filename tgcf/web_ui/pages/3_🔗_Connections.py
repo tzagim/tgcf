@@ -98,6 +98,14 @@ if check_password(st):
                         )
                     )
                     st.write("Write destinations one item per line")
+                    CONFIG.forwards[i].topicIDforEachDest = get_list(
+                        st.text_area(
+                            "TopicID for each destination",
+                            value=get_string(CONFIG.forwards[i].topicIDforEachDest),
+                            key=f"topicIDforEachDest {con}",
+                        )
+                    )
+                    st.write("A topicID for each corresponding destination")
 
                 with st.expander("Past Mode Settings"):
                     CONFIG.forwards[i].offset = int(
