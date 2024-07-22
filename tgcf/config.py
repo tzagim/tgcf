@@ -29,6 +29,7 @@ class Forward(BaseModel):
     use_this: bool = True
     source: Union[int, str] = ""
     dest: List[Union[int, str]] = []
+    topicIDforEachDest: List[int] = []
     offset: int = 0
     end: Optional[int] = 0
 
@@ -249,7 +250,9 @@ async def load_from_to(
         # }
         from_to_dict[src] = {}
         from_to_dict[src]["dest"] = [await _(dest) for dest in forward.dest]
+        from_to_dict[src]["topicIDs"] = forward.topicIDforEachDest
         from_to_dict[src]["pcfg"] = forward.plugin_cfg
+        
     logging.info(f"From to dict is {from_to_dict}")
     return from_to_dict
 
