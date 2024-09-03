@@ -1,3 +1,6 @@
+[tool.isort]
+profile = "black"
+
 [tool.poetry]
 name = "tgcf"
 version = "1.1.8"
@@ -35,41 +38,10 @@ black = {version = "^24.8.0", allow-prereleases = true}
 isort = "^5.13.2"
 pre-commit = "^3.8.0"
 
-
-[tool.poetry.scripts]
-tgcf = 'tgcf.cli:app'
-tgcf-web = 'tgcf.web_ui.run:main'
-
 [tool.poetry.group.dev.dependencies]
 ipykernel = "^6.17.0"
 pylint = ">=2.15.8,<4.0.0"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
-
-
-[tool.isort]
-profile = "black"
-
-[tool.black]
-line-length = 88
-include = '\.pyi?$'
-exclude = '''
-(
-  /(
-      \.eggs         # exclude a few common directories in the
-    | \.git          # root of the project
-    | \.hg
-    | \.mypy_cache
-    | \.tox
-    | \.venv
-    | _build
-    | buck-out
-    | build
-    | dist
-  )/
-  | foo.py           # also separately exclude a file named foo.py in
-                     # the root of the project
-)
-'''
+[tool.poetry.scripts]
+tgcf = 'tgcf.cli:app'
+tgcf-web = 'tgcf.web_ui.run:main'
