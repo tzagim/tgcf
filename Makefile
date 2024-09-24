@@ -33,13 +33,13 @@ pypi:
 
 docker:
 	@docker build -t tgcf .
-	@docker tag tgcf aahnik/tgcf:latest
-	@docker tag tgcf aahnik/tgcf:$(VERSION)
+	@docker tag tgcf tzagim/tgcf:latest
+	@docker tag tgcf tzagim/tgcf:$(VERSION)
 
 docker-release: docker
-	@docker push -a aahnik/tgcf
+	@docker push -a tzagim/tgcf
 
 docker-run:
-	@docker run -d -p 8501:8501 --env-file .env aahnik/tgcf
+	@docker run -d -p 8501:8501 --env-file .env tzagim/tgcf
 
 release: pypi docker-release
