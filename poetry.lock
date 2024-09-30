@@ -2635,12 +2635,12 @@ test = ["pylint", "pytest", "pytest-black", "pytest-cov", "pytest-pylint"]
 
 [[package]]
 name = "telethon"
-version = "1.36.0"
+version = "1.37.0"
 description = "Full-featured Telegram client library for Python 3"
 optional = false
 python-versions = ">=3.5"
 files = [
-    {file = "Telethon-1.36.0.tar.gz", hash = "sha256:11db5c7ed7e37f1272d443fb7eea0f1db580d56c6949165233946fb323aaf3a7"},
+    {file = "Telethon-1.37.0.tar.gz", hash = "sha256:e5e43cff1c1b34e2f9c2b395215beb6e9bda706b69def7efff4f55b23c9c4374"},
 ]
 
 [package.dependencies]
@@ -3020,4 +3020,4 @@ multidict = ">=4.0"
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.10"
-content-hash = "27f7f812141f0e53033f166a794f5d3dee63b846a72862e69befa166d2dd838f"
+content-hash = "1e4a146d09992b48a5b3f2e5b8d9aa1fda1f5e0a605ea0120a195bda5be72e4f"
