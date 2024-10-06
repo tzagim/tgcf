@@ -1,5 +1,11 @@
 <!-- markdownlint-disable -->
 
+# This fork is no longer maintained
+**If you are looking for a BOT to forward messages between groups in Telegram use: [tzbot](https://github.com/tzagim/tzbot).**
+
+**If you are looking for a USER (not a bot) to forward messages between groups in Telegram use: [fuserbot](https://github.com/tzagim/fuserbot).**
+
+
 <p align="center">
 <a href = "https://github.com/aahnik/tgcf" > <img src = "https://user-images.githubusercontent.com/66209958/115183360-3fa4d500-a0f9-11eb-9c0f-c5ed03a9ae17.png" alt = "tgcf logo"  width=120> </a>
 </p>
